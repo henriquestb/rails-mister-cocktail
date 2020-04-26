@@ -1,0 +1,25 @@
+    <div class="d-flex justify-content">
+      <h1>All cocktails</h1>
+      <%= link_to 'Adicionar', new_cocktail_path, class: 'btn btn-primary' %>
+    </div>
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-4">
+          <div class="flexpower">
+            <%= link_to cocktail_path(cocktail) do %>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= cocktail.id %>" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= cocktail.name %></h5>
+                    <p class="card-text"><%= cocktail.doses.first %></p>
+                    <a href="cocktails/<%= cocktail.id %>" class="btn btn-primary">Edit</a>
+                    <%= link_to cocktail_path(cocktail.id), method: :delete, data: {:confirm => "You sure?" } do  %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+  </div>
