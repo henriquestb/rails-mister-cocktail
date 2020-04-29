@@ -8,7 +8,7 @@
 <p>
   <strong>Doses:</strong>
   <% @doses.each do |dose| %>
-    <%= dose.description %>
+    <%= dose.description %> <%= dose.ingredient.name %>
   <% end%>
 </p>
 
