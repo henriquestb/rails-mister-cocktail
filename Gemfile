@@ -9,6 +9,7 @@ gem 'autoprefixer-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+gem 'cloudinary', '~> 1.12.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
